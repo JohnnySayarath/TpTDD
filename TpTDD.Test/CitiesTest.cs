@@ -10,6 +10,8 @@ namespace TpTDD.Test
     [TestClass]
     public class CitiesTest
     {
+        
+        public int MyProperty { get; set; }
         [TestMethod]
         public void SearchCities_WithLessThan2Char_ThrowsNotFoundException()
         {
@@ -50,6 +52,18 @@ namespace TpTDD.Test
                 "Budapest"
             };
             CollectionAssert.AreEqual(expected, results);
+        }
+
+        [TestMethod]
+        public void SearchCities_WithAsterix_ReturnAllCities()
+        {
+            Cities citiesSearch = new Cities();
+            List<string> results = citiesSearch.CitySearch("*");
+            List<string> asterix = new List<string>()
+            {
+                "Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul"
+            };
+            CollectionAssert.AreEqual(asterix, results);
         }
     }
 }

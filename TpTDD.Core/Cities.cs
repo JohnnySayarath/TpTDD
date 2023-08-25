@@ -2,7 +2,7 @@
 {
     public class Cities
     {
-        public List<string> cities = new List<string>()
+        private List<string> cities = new List<string>()
         {
             "Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul"
         };
@@ -14,6 +14,10 @@
                 throw new NotFoundException("Exception pas assez de caractères");
             }
             //throw new NotImplementedException();
+            if(searchText == "*")
+            {
+                return cities;
+            }
             List<string> matchingCities = new List<string>();
 
             foreach (string city in cities)
