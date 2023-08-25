@@ -13,11 +13,12 @@
             {
                 throw new NotFoundException("Exception pas assez de caractères");
             }
+            //throw new NotImplementedException();
             List<string> matchingCities = new List<string>();
 
             foreach (string city in cities)
             {
-                if (city.Contains(searchText, StringComparison.OrdinalIgnoreCase))
+                if (city.StartsWith(searchText, StringComparison.OrdinalIgnoreCase))
                 {
                     matchingCities.Add(city);
                 }
