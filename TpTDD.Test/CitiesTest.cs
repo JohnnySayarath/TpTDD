@@ -21,7 +21,23 @@ namespace TpTDD.Test
             // Assert
             Assert.ThrowsException<NotFoundException>(() => citySearch.CitySearch("A"));
 
+        }
 
+        [TestMethod]
+        public void SearchCities_WithExactAndAbove2Char_MatchCities()
+        {
+            // Arrange
+            Cities citiesSearch = new Cities();
+
+            // Act 
+            List<string> results = citiesSearch.CitySearch("Va");
+            List<string> excepted = new List<string>()
+            {
+                "Valence", "Vancouver"
+            };
+
+            // Assert
+            CollectionAssert.AreEqual(excepted, results);
         }
     }
 }
