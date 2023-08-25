@@ -61,7 +61,7 @@ namespace TpTDD.Test
             List<string> results = citiesSearch.CitySearch("*");
             List<string> asterix = new List<string>()
             {
-                "Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul"
+                "Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul", "Italy"
             };
             CollectionAssert.AreEqual(asterix, results);
         }
