@@ -39,5 +39,17 @@ namespace TpTDD.Test
             // Assert
             CollectionAssert.AreEqual(excepted, results);
         }
+
+        [TestMethod]
+        public void SearchCities_WithPartialSearch_MatchCities()
+        {
+            Cities citiesSearch = new Cities();
+            List<string> results = citiesSearch.CitySearch("Ape");
+            List<string> expected = new List<string>()
+            {
+                "Budapest"
+            };
+            CollectionAssert.AreEqual(expected, results);
+        }
     }
 }
